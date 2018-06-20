@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package main;
+
+message SearchRequest {
+    string query = 1;
+    int32 page_number = 2;
+    int32 result_per_page = 3;
+}
+
+message SearchResult {
+    string query = 1;
+    int32 page_number = 2;
+    string result = 3;
+}
+
+service SomeService {
+    rpc MakeRPC (SearchRequest) returns (SearchResult) {
+    }
+}
